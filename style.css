@@ -1,0 +1,19 @@
+body{
+    padding: 100px;
+}
+.d-section{
+    display: none;
+    color: white;
+}
+.diposite{
+    background-color: slateblue;
+    color: white;
+}
+.Withdraw{
+    background-color: lightsalmon;
+    color: white;
+}
+.balance{
+    background-color: orange;
+    color: white;
+}
