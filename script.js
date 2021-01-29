@@ -25,7 +25,7 @@ depositBtn.addEventListener('click', function () {
     const currentBalance = document.getElementById("currentBalance");
     const currentBalanceNumber = parseFloat(currentBalance);
     const totalBalance = depositNumber + currentBalanceNumber;
-    document.getElementById("currentDeposit").innerText = totalBalance;
+    document.getElementById("currentBalance").innerText = totalBalance;
 
     document.getElementById("depositAmount").value = "";
 })
