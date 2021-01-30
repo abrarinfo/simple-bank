@@ -8,24 +8,36 @@ loginBtn.addEventListener("click", function() {
     transactionArea.style.display = "block";
 })
 
-// diposit/widthraw button event handler
+// diposit button event handler
 
 const depositBtn = document.getElementById("addDeposit");
 depositBtn.addEventListener('click', function () {
-
     const depositAmount = document.getElementById("depositAmount").value;
-    const depositNumber = parseFloat(depositAmount)
+    const depositNumber = parseFloat(depositAmount);
 
-    const currentDeposit = document.getElementById('currentDeposit').innerText;
-    const currentDepositNumber = parseFloat(currentDeposit);
-    const totalDeposit = depositNumber + currentDepositNumber;
-    
-    document.getElementById("currentDeposit").innerText = totalDeposit;
-
-    const currentBalance = document.getElementById("currentBalance");
-    const currentBalanceNumber = parseFloat(currentBalance);
-    const totalBalance = depositNumber + currentBalanceNumber;
-    document.getElementById("currentBalance").innerText = totalBalance;
+    updateSpanText("currentDeposit", depositNumber);
+    updateSpanText("currentBalance", depositNumber);
 
     document.getElementById("depositAmount").value = "";
 })
+
+    //widthraw button event handler start vedio from 7m 25s
+    const widthrawBtn = document.getElementById("addWithdraw");
+    widthrawBtn.addEventListener('click', function () {
+        const widthrawNumber = getInputNumber("widthrawAmount");
+        console.log(widthrawNumber);
+    })
+
+    function getInputNumber(id) {
+        const widthrawAmount = document.getElementById(id).value;
+        const widthrawNumber = parseFloat(withdrawAmount);
+        return widthrawNumber;
+    }
+
+    
+function updateSpanText(id, depositNumber) {
+    const current = document.getElementById(id).innerText;
+    const currentNumber = parseFloat(current);
+    const totalAmount = depositNumber + currentNumber;
+    document.getElementById(id).innerText = totalAmount;
+}
