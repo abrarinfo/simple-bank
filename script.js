@@ -12,8 +12,7 @@ loginBtn.addEventListener("click", function() {
 
 const depositBtn = document.getElementById("addDeposit");
 depositBtn.addEventListener('click', function () {
-    const depositAmount = document.getElementById("depositAmount").value;
-    const depositNumber = parseFloat(depositAmount);
+    const depositNumber = getInputNumber("depositAmount")
 
     updateSpanText("currentDeposit", depositNumber);
     updateSpanText("currentBalance", depositNumber);
@@ -24,14 +23,14 @@ depositBtn.addEventListener('click', function () {
     //widthraw button event handler start vedio from 7m 25s
     const widthrawBtn = document.getElementById("addWithdraw");
     widthrawBtn.addEventListener('click', function () {
-        const widthrawNumber = getInputNumber("widthrawAmount");
+        const widthrawNumber = getInputNumber("withdrawAmount");
         console.log(widthrawNumber);
     })
 
     function getInputNumber(id) {
-        const widthrawAmount = document.getElementById(id).value;
-        const widthrawNumber = parseFloat(withdrawAmount);
-        return widthrawNumber;
+        const amount = document.getElementById(id).value;
+        const amountNumber = parseFloat(amount);
+        return amountNumber;
     }
 
     
